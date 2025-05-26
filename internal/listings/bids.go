@@ -25,5 +25,5 @@ func UploadBid(c *fiber.Ctx) error {
 		return errors.InternalServerError("Failed to store bid: " + err.Error())
 	}
 
-	return c.Status(fiber.StatusCreated).JSON(data)
+	return errors.SuccessResponse(c, data)
 }
